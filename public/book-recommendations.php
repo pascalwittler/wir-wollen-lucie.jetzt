@@ -2,6 +2,26 @@
 
 class BookRecommendations
 {
+    public function __construct()
+    {
+        $this->queryLinkList();
+    }
+
+    protected function queryLinkList()
+    {
+        $feedXmlString = file_get_contents('https://www.deutschlandfunknova.de/podcast/das-perfekte-buch-fuer-den-moment');
+
+        $articleLinks = [];
+        preg_match_all('/<p>Den Artikel zum Stück findet ihr <a href="(.*)">hier<\/a>\.<\/p>/', $feedXmlString, $articleLinks);
+        $articleLinks = array_unique($articleLinks[1]);
+
+        $data = [
+            'linkList' => array_slice(array_values($articleLinks), 0, 100),
+        ];
+
+        $this->renderJson($data);
+    }
+
     protected function renderJson($data)
     {
         header('Content-Type: application/json; charset=utf-8');
