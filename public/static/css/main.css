@@ -24,6 +24,14 @@ body {
   background-color: #f5bb00;
 }
 
+.book-recommendation.positive {
+  background-color: #8ea604;
+}
+
+.book-recommendation.negative {
+  background-color: #bb4430;
+}
+
 @media (orientation: landscape) {
   .book-recommendations {
     width: 100vh;
