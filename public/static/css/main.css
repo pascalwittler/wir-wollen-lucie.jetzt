@@ -15,6 +15,7 @@ body {
 
 html {
   font-family: 'Satoshi', sans-serif;
+  color: #000000;
 }
 
 .book-recommendations {
@@ -25,6 +26,8 @@ html {
 }
 
 .book-recommendation {
+  display: grid;
+  place-content: center;
   background-color: #f5bb00;
 }
 
@@ -37,6 +40,10 @@ html {
 }
 
 @media (orientation: landscape) {
+  html {
+    font-size: 2vh;
+  }
+
   .book-recommendations {
     width: 100vh;
     height: 100vh;
@@ -44,6 +51,10 @@ html {
 }
 
 @media (orientation: portrait) {
+  html {
+    font-size: 2vw;
+  }
+
   .book-recommendations {
     width: 100vw;
     height: 100vw;
