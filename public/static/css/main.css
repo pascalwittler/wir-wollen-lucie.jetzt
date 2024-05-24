@@ -13,6 +13,10 @@ body {
   background-color: #111111;
 }
 
+html {
+  font-family: 'Satoshi', sans-serif;
+}
+
 .book-recommendations {
   display: grid;
   grid-template-rows: repeat(10, 1fr);
@@ -44,4 +48,18 @@ body {
     width: 100vw;
     height: 100vw;
   }
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-Variable.woff2');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../fonts/Satoshi-VariableItalic.woff2');
+  font-weight: 100 900;
+  font-style: italic;
 }
