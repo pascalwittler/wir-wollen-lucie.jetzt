@@ -4,6 +4,13 @@ class BookRecommendations
 {
     public function __construct()
     {
+        $request_paramters = $_GET;
+
+        if (array_key_exists('article', $request_paramters)) {
+            $this->querySingleArticle($request_paramters['article']);
+            return;
+        }
+
         $this->queryLinkList();
     }
 
