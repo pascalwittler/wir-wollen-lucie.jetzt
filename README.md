@@ -2,6 +2,8 @@
 
 Statistics about book recommendations published by the German radio station _Deutschlandfunk Nova_ including at least one main character with the first name _Lucie_
 
+![Screenshot](screenshot.png)
+
 ## Setup with Docker
 
 1. Build the container
