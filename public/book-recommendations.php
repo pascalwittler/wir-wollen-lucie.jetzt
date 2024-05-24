@@ -22,6 +22,24 @@ class BookRecommendations
         $this->renderJson($data);
     }
 
+    protected function extractSingleArticleData(string $articleString)
+    {
+        $publishingDateMatches = null;
+        preg_match('/<time class="timestamp" itemprop="dateCreated" datetime="(.*)">(.*)<\/time>/', $articleString, $publishingDateMatches);
+        $publishingDate = preg_replace('/ME(S)?Z/', 'T', $publishingDateMatches[1]);
+
+        $includedLucie = (bool) preg_match('/Luc(i|ie|y)/', $articleString);
+
+        $data = [
+            'bookRecommendation' => [
+                'publishingDate' => $publishingDate,
+                'includesLucie'  => $includedLucie,
+            ],
+        ];
+
+        $this->renderJson($data);
+    }
+
     protected function renderJson($data)
     {
         header('Content-Type: application/json; charset=utf-8');
