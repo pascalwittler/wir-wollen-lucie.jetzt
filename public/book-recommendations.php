@@ -22,6 +22,15 @@ class BookRecommendations
         $this->renderJson($data);
     }
 
+    protected function querySingleArticle(string $articleLink)
+    {
+        if (!str_starts_with($articleLink, 'https://www.deutschlandfunknova.de/')) {
+            return;
+        }
+
+        $this->extractSingleArticleData(file_get_contents($articleLink));
+    }
+
     protected function extractSingleArticleData(string $articleString)
     {
         $publishingDateMatches = null;
