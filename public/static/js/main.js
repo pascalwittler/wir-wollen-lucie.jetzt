@@ -11,10 +11,11 @@ class BookRecommendationsParser {
           fetch(phpApiUrl + '?article=' + link)
             .then((response) => response.json())
             .then((data) => {
-              const dateString = (new Date(data.bookRecommendation.publishingDate))
-                .toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit', year: '2-digit'});
+              const publishingDate = data.bookRecommendation.publishingDate;
+              const includesLucie = data.bookRecommendation.includesLucie;
+              const dateString = (new Date(publishingDate)).toLocaleDateString('de-DE', {day: '2-digit', month: '2-digit', year: '2-digit'});
 
-              tiles[index].classList.add(data.bookRecommendation.includesLucie ? 'positive' : 'negative');
+              tiles[index].classList.add(includesLucie ? 'positive' : 'negative');
               tiles[index].innerHTML = `<span>${dateString}</span>`;
             });
         });
