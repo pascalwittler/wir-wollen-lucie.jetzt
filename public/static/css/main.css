@@ -8,8 +8,8 @@ html,
 body {
   display: grid;
   place-content: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100svw;
+  height: 100svh;
   background-color: #111111;
 }
 
@@ -41,23 +41,23 @@ html {
 
 @media (orientation: landscape) {
   html {
-    font-size: 2vh;
+    font-size: 2svh;
   }
 
   .book-recommendations {
-    width: 100vh;
-    height: 100vh;
+    width: 100svh;
+    height: 100svh;
   }
 }
 
 @media (orientation: portrait) {
   html {
-    font-size: 2vw;
+    font-size: 2svw;
   }
 
   .book-recommendations {
-    width: 100vw;
-    height: 100vw;
+    width: 100svw;
+    height: 100svw;
   }
 }
 
