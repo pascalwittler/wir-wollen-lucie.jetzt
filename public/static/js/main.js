@@ -8,7 +8,7 @@ class BookRecommendationsParser {
         const tiles = Array.from(document.querySelectorAll('.book-recommendation'));
 
         Array.from(data.linkList).map((link, index) => {
-          fetch(phpApiUrl + '?article=' + link)
+          fetch(`${phpApiUrl}?article=${link}`)
             .then((response) => response.json())
             .then((data) => {
               const publishingDate = data.bookRecommendation.publishingDate;
